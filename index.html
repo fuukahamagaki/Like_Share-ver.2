@@ -2,6 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <script src="https://kit.fontawesome.com/8d37ec06a2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/skippr.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -12,11 +13,23 @@
     <header>
       <div class="container header-group">
         <a href="index.html"><img class="logo" src="img/logo.png"></a>
-        <nav>
-         <a href="sign-up.html"><li class="list">会員登録</li></a>
-         <a href="sign-in.html"><li class="list">ログイン</li></a>
-         <a href="#about"><li class="list">このサイトについて</li></a>
-        </nav>
+        <div id="sp-menu">
+         <h2>MENU</h2>
+          <ul>
+            <li><a href="sign-up.html">会員登録</a></li>
+            <li><a href="sign-in.html">ログイン</a></li>
+            <li><a href="#about">このサイトについて</a></li>
+            <li><a href="#">MENU4</a></li>
+            <li><a href="#">MENU5</a></li>
+          </ul>
+        </div>
+        <div id="hm-icon">
+         <a class="menu-trigger" href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+         </a>
+        </div>
       </div>
     </header>
     <section id="main-visual">
