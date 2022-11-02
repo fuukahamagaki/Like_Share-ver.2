@@ -53,15 +53,22 @@
     </section>
     <section id=button>
      <div class="container">
-      <div><form>新規投稿</form></div>
+      <div>
+        <form>新規投稿</form>
+        <p id="choice">ここに日時を表示します</p>
+      </div>
       <div><form>投稿一覧</form></div>
      </div>
     </section>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/skippr.min.js"></script>
-    <script src="js/script.js"></script>
     <footer>
       <p class="container footer">Like_Share ver.2</p>
     </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skippr.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+      'use strict';
+      document.getElementById('choice').textContent = new Date();
+    </script>
   </body>
 </html>
