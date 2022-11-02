@@ -29,6 +29,9 @@
       </ul>
       </div>
     </header>
+    
+    <p id="time">ここに日時を表示します</p>
+    
     <section id="main-visual">
       <div class="container mv">
        <div class="theTarget">
@@ -51,11 +54,17 @@
         </p>
       </div>
     </section>
+    <section>
+      <form action="#" id="form">
+        <input type="text" name="word">
+        <input type="submit" value="検索">
+      </form>
+      <p id="output"></p>
+    </section>
     <section id=button>
      <div class="container">
       <div>
         <form>新規投稿</form>
-        <p id="choice">ここに日時を表示します</p>
       </div>
       <div><form>投稿一覧</form></div>
      </div>
@@ -68,7 +77,28 @@
     <script src="js/script.js"></script>
     <script>
       'use strict';
-      document.getElementById('choice').textContent = new Date();
+      
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = now.getMonth();
+      const date = now.getDate();
+      const hour = now.getHours();
+      const min = now.getMinutes();
+      let ampm = '';
+      if (hour < 12) {
+        ampm = 'a.m.';
+      } else {
+        ampm = 'p.m.';
+      }
+      
+      const output = `${year}/${month + 1}/${date} ${hour % 12}:${min}${ampm}`;
+      document.getElementById('time').textContent = output;
+      
+      document.getElementById('form').onsubmit = function(event) {
+        event.preventDefault();
+        const search = document.getElementById('form').word.value;
+        document.getElementById('output').textContent = `「${search}」の検索中...`;
+      };
     </script>
   </body>
 </html>
