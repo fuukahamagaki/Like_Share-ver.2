@@ -23,9 +23,9 @@
        </div>
       </div>
     </header>
-    
+
     <p id="time">ここに日時を表示します</p>
-    
+
     <section id="main-visual">
       <div class="container mv">
        <div class="theTarget">
@@ -52,8 +52,8 @@
       <form action="#" id="form">
         <input type="text" name="word">
         <input type="submit" value="検索">
+        <p id="output"></p>
       </form>
-      <p id="output"></p>
     </section>
     <section id=button>
      <div class="container">
@@ -68,14 +68,14 @@
     </footer>
    </div>
    <nav id="nav">
-     
+
    </nav>
     <script src="js/jquery.min.js"></script>
     <script src="js/skippr.min.js"></script>
     <script src="js/script.js"></script>
     <script>
       'use strict';
-      
+
       const now = new Date();
       const year = now.getFullYear();
       const month = now.getMonth();
@@ -88,10 +88,10 @@
       } else {
         ampm = 'p.m.';
       }
-      
+
       const output = `${year}/${month + 1}/${date} ${hour % 12}:${min}${ampm}`;
       document.getElementById('time').textContent = output;
-      
+
       document.getElementById('form').onsubmit = function(event) {
         event.preventDefault();
         const search = document.getElementById('form').word.value;
